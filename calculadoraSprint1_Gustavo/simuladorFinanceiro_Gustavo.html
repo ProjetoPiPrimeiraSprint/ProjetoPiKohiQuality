@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Financeiro Kohi Quality</title>
+</head>
+
+<body>
+
+  <input placeholder="Quilos Produzidos por Ano:" type="text" id="inpKgProduzidosAno"><br>
+  <input placeholder="Quilos Perdidos por Ano:" type="text" id="inpKgPerdidosAno"><br>
+  <input placeholder="Sacas vendidas por Ano:" type="text" id="inpQtdSacasAno"><br>
+
+  <select id="opcoes">
+    <option value="1" id="optionArabica">Arábica</option>
+    <option value="2" id="optionConilon">Conilon</option>
+  </select>
+
+  <br>
+
+  <button onclick="calcular()">Simule!</button>
+
+  <div id="divMensagem"></div>
+
+  <div id="valorMercado">
+    <h3>Informações de Mercado</h3><br>
+    <span>Peso padrão da saca: 60Kg</span><br>
+    <span>Preço da saca Arábica: R$ 1.015.00</span><br>
+    <span>Preço da saca Conilon: R$ 810.00</span>
+    <span><strong>AVISO: </strong>Os valores são correspondentes a média atual do mercado.</span>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+  var precoArabica = Number(1015); //60Kg
+  var precoConilon = Number(810); //60Kg
+  var pesoSaca = Number(60); //Peso da saca
+
+  function calcular() { //Função calcular
+    var quilosProduzidos = Number(inpKgProduzidosAno.value); //Quilos produzidos por ano
+    var quilosPerdidos = Number(inpKgPerdidosAno.value); //Quilos perdidos por ano 
+    var sacasAno = Number(inpQtdSacasAno.value); //Quantidade de sacas vendidas por ano
+    var arabica = Number(optionArabica.value); //Option tipo Arábica
+    var conilon = Number(optionConilon.value); //Option tipo Conilon
+    var quilosFinais = Number(quilosProduzidos - quilosPerdidos); //Quilos retirando a perda
+    var pesoDivididoPorSaca = Number((quilosProduzidos - quilosPerdidos) / pesoSaca); //Peso finais divididos por saca
+    var porcentagem = Number(quilosFinais * 0.2); //Porcentagem de 20%
+    var valorDescontado = Number((quilosPerdidos * 100) / quilosProduzidos);
+
+    if (arabica) {
+      var somaTotal = sacasAno * precoArabica; //Conversão do Peso Final em Real
+      var somaTotalLucro = somaTotal + porcentagem //Total em dinheiro somando com lucro prometido
+
+      divMensagem.innerHTML = (`Você tem ${valorDescontado}% de perda por ano, alcançando um valor de R$ ${somaTotal}.<br>Com nossa solução você consegue reduzir em até 20% das perdas, assim tendo um valor final de R$ ${somaTotalLucro}!!`);
+    }
+    if (conilon) {
+      var somaTotal = sacasAno * precoConilon; //Conversão do Peso Final em Real
+      var somaTotalLucro = somaTotal + porcentagem //Total em dinheiro somando com lucro prometido
+
+      divMensagem.innerHTML = (`Você tem ${valorDescontado}% de perda por ano, alcançando um valor de R$ ${somaTotal}.<br>Com nossa solução você consegue reduzir em até 20% das perdas, assim tendo um valor final de R$ ${somaTotalLucro}!!`);
+    }
+  }
+
+  //Prometemos reduzir em até 20% de perdas, dependendo da estrutura do cliente, assim podendo variar para mais ou menos
+</script>
