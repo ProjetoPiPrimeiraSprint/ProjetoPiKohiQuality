@@ -4,32 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Simulador Financeiro Kohi Quality</title>
 </head>
 
 <body>
 
-  <input placeholder="Quilos Produzidos por Ano:" type="text" id="inpKgProduzidosAno"><br>
-  <input placeholder="Quilos Perdidos por Ano:" type="text" id="inpKgPerdidosAno"><br>
-  <input placeholder="Sacas vendidas por Ano:" type="text" id="inpQtdSacasAno"><br>
+  <div class="section">
+    <div class="conteudo">
+      <div class="divTitulo"><h1 class="titulo">FAÇA UMA SIMULAÇÃO CONOSCO!</h1></div>
+    <div class="linha"></div>
+    <div class="input">
+      <div class="centralizar">
+        <input class="input" placeholder="Quilos Produzidos por Ano:" type="text" id="inpKgProduzidosAno"><br>
+      <input class="input" placeholder="Quilos Perdidos por Ano:" type="text" id="inpKgPerdidosAno"><br>
+      <div class="inputTipo">
+        <label id="tipocafe" for="opcoes">Espécie do café:</label>
+      <select class="input" id="opcoes">
+        <option value="1" id="optionArabica">Arábica</option>
+        <option value="2" id="optionConilon">Conilon</option>
+      </select>
+      </div>
 
-  <select id="opcoes">
-    <option value="1" id="optionArabica">Arábica</option>
-    <option value="2" id="optionConilon">Conilon</option>
-  </select>
+    <br>
 
-  <br>
+    <button class="botao" onclick="calcular()">Simule!</button>
+      </div>
+    </div>
+    <div id="divMensagem"></div>
 
-  <button onclick="calcular()">Simule!</button>
-
-  <div id="divMensagem"></div>
-
-  <div id="valorMercado">
-    <h3>Informações de Mercado</h3><br>
-    <span>Peso padrão da saca: 60Kg</span><br>
-    <span>Preço da saca Arábica: R$ 1.015.00</span><br>
-    <span>Preço da saca Conilon: R$ 810.00</span>
-    <span><strong>AVISO: </strong>Os valores são correspondentes a média atual do mercado.</span>
+    <div class="legenda" id="valorMercado">
+      <h3>Informações de Mercado</h3><br>
+      <span>Peso padrão da saca: 60Kg</span><br>
+      <span>Preço da saca Arábica: R$ 1.015.00</span><br>
+      <span>Preço da saca Conilon: R$ 810.00</span>
+      <span><strong>AVISO: </strong>Os valores são correspondentes a média atual do mercado.</span>
+    </div>
+    </div>
   </div>
 
 </body>
@@ -45,25 +56,26 @@
   function calcular() { //Função calcular
     var quilosProduzidos = Number(inpKgProduzidosAno.value); //Quilos produzidos por ano
     var quilosPerdidos = Number(inpKgPerdidosAno.value); //Quilos perdidos por ano 
-    var sacasAno = Number(inpQtdSacasAno.value); //Quantidade de sacas vendidas por ano
-    var arabica = Number(optionArabica.value); //Option tipo Arábica
-    var conilon = Number(optionConilon.value); //Option tipo Conilon
+    var opcaoSelect = Number(opcoes.value);
     var quilosFinais = Number(quilosProduzidos - quilosPerdidos); //Quilos retirando a perda
-    var pesoDivididoPorSaca = Number((quilosProduzidos - quilosPerdidos) / pesoSaca); //Peso finais divididos por saca
-    var porcentagem = Number(quilosFinais * 0.2); //Porcentagem de 20%
-    var valorDescontado = Number((quilosPerdidos * 100) / quilosProduzidos);
+    var pesoDivididoPorSaca = Number(quilosFinais / pesoSaca); //Peso finais divididos por saca
+    var porcentagem = Number(quilosProduzidos * 0.2); //Porcentagem de 20%
+    var pctgPerda = Number((quilosPerdidos * 100) / quilosProduzidos); //Porcentagem de perda
 
-    if (arabica) {
-      var somaTotal = sacasAno * precoArabica; //Conversão do Peso Final em Real
-      var somaTotalLucro = somaTotal + porcentagem //Total em dinheiro somando com lucro prometido
 
-      divMensagem.innerHTML = (`Você tem ${valorDescontado}% de perda por ano, alcançando um valor de R$ ${somaTotal}.<br>Com nossa solução você consegue reduzir em até 20% das perdas, assim tendo um valor final de R$ ${somaTotalLucro}!!`);
+    if (opcaoSelect == 1) {
+      var somaTotal = pesoDivididoPorSaca * precoArabica; //Conversão do Peso Final em Real
+      var reducao = somaTotal * 0.2; //Adquirindo porcentagem do valor contendo a perda 20%++
+      var lucro = somaTotal + reducao //Total em dinheiro somando com redução prometida
+
+      divMensagem.innerHTML = (`Você tem ${pctgPerda}% de perda por ano, alcançando um valor de R$ ${somaTotal}.<br>Com nossa solução você consegue reduzir em até 20% das perdas, assim tendo um valor final de R$ ${lucro}!!`);
     }
-    if (conilon) {
-      var somaTotal = sacasAno * precoConilon; //Conversão do Peso Final em Real
-      var somaTotalLucro = somaTotal + porcentagem //Total em dinheiro somando com lucro prometido
+    if (opcaoSelect == 2) {
+      var somaTotal = pesoDivididoPorSaca * precoConilon; //Conversão do Peso Final em Real
+      var reducao = somaTotal * 0.2; //Adquirindo porcentagem do valor contendo a perda 20%++
+      var lucro = somaTotal + reducao //Total em dinheiro somando com redução prometida
 
-      divMensagem.innerHTML = (`Você tem ${valorDescontado}% de perda por ano, alcançando um valor de R$ ${somaTotal}.<br>Com nossa solução você consegue reduzir em até 20% das perdas, assim tendo um valor final de R$ ${somaTotalLucro}!!`);
+      divMensagem.innerHTML = (`Você tem ${pctgPerda}% de perda por ano, alcançando um valor de R$ ${somaTotal}.<br>Com nossa solução você consegue reduzir em até 20% das perdas, assim tendo um valor final de R$ ${lucro}!!`);
     }
   }
 
