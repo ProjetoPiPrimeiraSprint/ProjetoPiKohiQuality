@@ -6,15 +6,14 @@ var Porcentagem = Number(0.2);
 function calcular() {
     var Produzidos = Number(inProduzido.value); // Sacas produzidas por ano
     var KgProduzido = Produzidos * 60; // Kg produzidos por ano
-    var Perdido = Number(inPerda.value); // Kg perdidos por ano
+    var Perdido = Number(inPerda.value); // Kg perdidos por ano++
     var option = Number(opcoes.value);
 
     div1.innerHTML = ` `;
 
     if (option == 1) { // tipo de café = Arábica
-        var Total = Produzidos - Perdido;
+        var Total = KgProduzido - Perdido;
         Total *= ValorArabica; // valor sem nossos serviços
-        var TotalArabica = Produzidos * ValorArabica; // valor total produzido em reais = 100%
         var TotalPerda = Perdido * Porcentagem - Produzidos; // total perdido
         TotalPerda = (Produzidos - TotalPerda) * ValorArabica; // Aproveitamento
 
