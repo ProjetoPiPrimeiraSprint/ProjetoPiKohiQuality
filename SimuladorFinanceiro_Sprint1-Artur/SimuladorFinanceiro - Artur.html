@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="avisos">
+        <span style="color: red; font-size: 25px;">Aviso:</span> <br> Com base em pesquisas, padronizamos 60 kg <br> como um peso médio de uma saca de café
+    </div>
+    <div class="container">
+        <div class="titulo"> Insira os dados da sua empresa: </div>  <br> <br>
+        <div class="simulador">
+            Sacas produzidas por ano <br> 
+            <input type="number" id="iptQtdSacas"> <br> <br>
+        
+            Kilos de café desperdiçados <br>
+            <input type="number" id="iptKgDesp"> <br> <br>
+        
+            Preço por saca <br>
+            <input type="number" id="iptPreco"> <br> <br>
+        
+            <button onclick="avaliar()">Avaliar</button> <br> <br>
+        
+        </div>
+        <div id="divMensagem"></div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function avaliar() {
+        var qtdSacas = Number(iptQtdSacas.value);
+        var kgDesp = Number(iptKgDesp.value);
+        var preco = Number(iptPreco.value);
+
+        var kgTotal = qtdSacas * 60;
+        var porcenDesp = kgDesp / kgTotal;
+        
+        var qtdDespSacas = qtdSacas * porcenDesp;
+        
+        var qtdKgFinal = kgTotal - kgDesp;
+        
+        var cclPrecoT = qtdSacas * preco;
+        var cclPrecoFnl = (qtdKgFinal / 60) * preco;
+        
+        if (porcenDesp > 0.30) {
+            var descPorcen = kgDesp * 0.3;
+            var nvKgDesp = kgDesp - descPorcen;
+        }
+        if (porcenDesp <= 0.30) {
+            var descPorcen = kgDesp * 0.2;
+            var nvKgDesp = kgDesp - descPorcen;
+        }
+        
+        var kgFinalNv = kgTotal - nvKgDesp;
+        var reducKgDesp = kgDesp - nvKgDesp;
+        var valorDesc = (kgFinalNv / 60) * preco;
+
+        porcenDesp *= 100;
+        
+        divMensagem.innerHTML = `Em um ano com <strong>${qtdSacas}</strong> sacas produzidas, aproximadamente <strong>${porcenDesp}%</strong> desse valor será desperdiçado.<br><br> 
+        Com essas <strong>${qtdSacas}</strong> sacas produzidas, o faturamento em teoria seria de <strong>R$${cclPrecoT}</strong>, contudo diante do desperdício, esse valor cai para <strong>R$${cclPrecoFnl}</strong>. <br> <br> 
+        Contudo, conosco, você reduzirá <strong>${reducKgDesp} kg</strong> em perdas totais, aumentando seu lucro para <strong>R$${valorDesc}</strong>.`
+    }
+
+</script>
+
