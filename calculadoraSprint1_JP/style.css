@@ -7,19 +7,14 @@ body {
 }
 
 .header {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: fit-content;
-    margin-top: 30px;
 }
 
 .H1 {
     font-size: 30px;
-    width: 100vw;
-    text-align: center;
     font-weight: bold;
     color: #556946;
 }
@@ -29,7 +24,6 @@ body {
     margin-top: -0.57%;
     width: 700px;
     height: 2px;
-    border-radius: 10cm;
 }
 
 .container_input {
@@ -38,18 +32,15 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    text-align: center;
-    width: 100%;
     height: 200px;
 }
 
 .input {
     width: 200px;
-    border-color: #556946;
     background-color: transparent;
-    color: black;
+    color: #617750;
     height: 36px;
-    border-style: solid;
+    border: solid #556946;
 }
 
 .select {
@@ -58,13 +49,12 @@ body {
 }
 
 .option {
-    width: 207.2px;
-    border-color: #556946;
+    width: 207.8px;
+    border: solid #556946;
     background-color: transparent;
     color: #617750;
     height: 39.5px;
-    border-style: solid;
-    border-width: 2px;
+    border-width: 2.5px;
 }
 
 .container_button {
@@ -104,7 +94,6 @@ body {
 }
 
 .H2 {
-    /* border: solid blue; */
     font-size: 25px;
     font-weight: bold;
     color: #556946;
@@ -113,7 +102,6 @@ body {
 }
 
 .paragrafo {
-    /* border: solid red; */
     margin-top: 1px;
     font-size: 20px;
     color: #617750;
