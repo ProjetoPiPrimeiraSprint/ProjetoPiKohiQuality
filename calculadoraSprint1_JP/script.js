@@ -15,13 +15,8 @@ function calcular() {
 
     TotalPerda = KgProduzidos - TotalPerda; // Quantidade final de Kg de café com nossos serviços
 
-<<<<<<< HEAD
     if (option == 1) { // tipo de café = Arábico
         Total *= ValorArabica; // Aproveitamento sem nossos serviços
-=======
-    if (option == 1) { // tipo de café = Arábica
-        Total *= ValorArabica; // valor com perdas sem nossos serviços
->>>>>>> 5e56582a726783829153a2b6677def4b8eb4dc3b
 
         TotalPerda *= ValorArabica; // Novo aproveitamento
         div1.innerHTML = `Ao não utilizar nossos processos de controle, você tem lucro final de café tipo Arábico de R$${Total.toFixed(4, 2)}<br><br>`;
