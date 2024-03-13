@@ -13,54 +13,56 @@
         <div class="title">
             <h1>Informe os dados da sua empresa:</h1>
         </div>
-    <div class="caixa">
-            <div class="inp_colheita">
-                Sacas por colheira: <input  type="text" id="inp_colheita">
+        <div class="alinhamento">
+            <div class="caixa">
+                <div class="inp_colheita">
+                    Sacas por colheira: <input type="text" id="inp_colheita">
+                </div>
+                <br>
+                <div class="inp_ValorSaca">
+                    Valor unitario de saca: <input type="text" id="inp_ValorSaca">
+                </div>
+                <br>
+                <div class="div_button">
+                    <button class="button" onclick="CalcularSemKohi()">Calcular Lucro</button>
+                </div>
+                <br>
+                <div class="text" id="div_mensagem"></div>
+                <br>
             </div>
+        </div>
         <br>
-             <div class="inp_ValorSaca">
-                 Valor unitario de saca: <input type="text" id="inp_ValorSaca">
-            </div>
-                <br>
-            <div class="div_button">
-                <button class="button" onclick="CalcularSemKohi()">Calcular Lucro</button>
-            </div>
-                <br>
-            <div class="text" id="div_mensagem"></div>       
-                <br>
-    </div>            
-                <br>
-            <div class="text">
-              Caso contrate a Kohi Quality
-                <br>
-            </div>
-            <div class="div_button">
-                <button class="button" onclick="CalcularComKohi()">Com a Kohi Quality</button>
-            </div>
+        <div class="text">
+            Caso contrate a Kohi Quality
+            <br>
+        </div>
+        <div class="div_button">
+            <button class="button" onclick="CalcularComKohi()">Com a Kohi Quality</button>
+        </div>
         <div class="text" id="div_mensagem2"></div>
     </div>
 </body>
 <script>
-    
-    
-    function CalcularSemKohi(){
+
+
+    function CalcularSemKohi() {
         var colheita = Number(inp_colheita.value)
-        var ValorSaca =Number(inp_ValorSaca.value)
-        var ganho =  colheita * ValorSaca
-        var perda =  (colheita * ValorSaca) * 0.60
-        var lucro  = ganho - perda
+        var ValorSaca = Number(inp_ValorSaca.value)
+        var ganho = colheita * ValorSaca
+        var perda = (colheita * ValorSaca) * 0.60
+        var lucro = ganho - perda
         div_mensagem.innerHTML = `<span class="red">Você recebe em média R$${ganho} de lucro, porém, acaba perdendo cerca de R$${perda} por conta de um possivel mau armazenamento, e no final você fica com apenas R$${lucro}.</span>`
-     }   
-     
-     function CalcularComKohi(){
-         var colheita = Number(inp_colheita.value)
-         var ValorSaca =Number(inp_ValorSaca.value)
-         var ganho = colheita * ValorSaca
-         var perda = (colheita * ValorSaca) * 0.10
-         var lucro = ganho - perda
-         div_mensagem2.innerHTML = `<span class="green">Com a <b>Kohi Quality</b> você recebe R$${ganho} e acaba perdendo apenas R$${perda}, e no final você fica com R$${lucro}!</span>`
-     }
-            
+    }
+
+    function CalcularComKohi() {
+        var colheita = Number(inp_colheita.value)
+        var ValorSaca = Number(inp_ValorSaca.value)
+        var ganho = colheita * ValorSaca
+        var perda = (colheita * ValorSaca) * 0.10
+        var lucro = ganho - perda
+        div_mensagem2.innerHTML = `<span class="green">Com a <b>Kohi Quality</b> você recebe R$${ganho} e acaba perdendo apenas R$${perda}, e no final você fica com R$${lucro}!</span>`
+    }
+
 </script>
 
 </html>
