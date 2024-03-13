@@ -21,7 +21,7 @@ function calcular() {
         TotalPerda *= ValorArabica; // Aproveitamento
         div1.innerHTML = `Ao não utilizar nossos processos de controle, você tem lucro final de café tipo Arábico de R$${Total.toFixed(4, 2)}<br><br>`;
 
-        div1.innerHTML += `Seus lucros vão para R$${TotalPerda.toFixed(4, 2)} ao utilizar nossos serviços na Kohi Quality`;
+        div1.innerHTML += `Seus lucros vão para R$${TotalPerda.toFixed(2)} ao utilizar nossos serviços na Kohi Quality`;
     }
     if (option == 2) {
         Total *= ValorConilon; // valor com perdas sem nossos serviços
