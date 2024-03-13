@@ -64,10 +64,6 @@ h1{
     align-items: center;
 }
 
-.corpo {
-    background-color: aqua;
-}
-
 .alinhamento {
     display: flex;
     justify-content: center;
