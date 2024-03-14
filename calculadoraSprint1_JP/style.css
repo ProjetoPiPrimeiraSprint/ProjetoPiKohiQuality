@@ -38,23 +38,26 @@ body {
 .input {
     width: 200px;
     background-color: transparent;
-    color: #617750;
+    color: black;
     height: 36px;
-    border: solid #556946;
+    border: solid black;
+    border-radius: 5px;
 }
 
 .select {
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 }
 
 .option {
     width: 207.8px;
-    border: solid #556946;
+    border: solid black;
     background-color: transparent;
-    color: #617750;
+    color: #556946;
     height: 39.5px;
     border-width: 2.5px;
+    border-radius: 5px;
 }
 
 .container_button {
@@ -64,11 +67,11 @@ body {
 }
 
 .button {
-    border: solid #556946;
+    border: solid black 2px;
     border-radius: 50px;
-    color: #967049;
+    color: black;
     font-size: 20px;
-    width: 150PX;
+    width: 200px;
     height: 50px;
     font-weight: bold;
     background-color: transparent;
@@ -76,7 +79,15 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #556946;
+    color: white;
+}
+
 
 .container_rodape {
     display: flex;
@@ -91,6 +102,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    font-weight: bolder;
 }
 
 .H2 {
@@ -134,6 +146,7 @@ body {
     justify-content: center;
     height: 100px;
     text-align: center;
+    font-weight: bolder;
 }
 
 .div1 {
@@ -145,4 +158,8 @@ body {
     width: 450px;
     color: #617750;
     height: 200px;
+}
+
+.AVISO {
+    color: red;
 }
