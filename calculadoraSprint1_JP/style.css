@@ -37,7 +37,7 @@ body {
 .input {
     width: 200px;
     background-color: transparent;
-    color: #617750;
+    color: black;
     height: 36px;
     border: solid #556946;
 }
@@ -51,7 +51,7 @@ body {
     width: 207.8px;
     border: solid #556946;
     background-color: transparent;
-    color: #617750;
+    color: black;
     height: 39.5px;
     border-width: 2.5px;
 }
@@ -75,6 +75,13 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #556946;
+    color: white;
 }
 
 .container_rodape {

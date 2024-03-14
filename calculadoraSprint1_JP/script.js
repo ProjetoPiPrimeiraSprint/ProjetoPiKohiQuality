@@ -1,5 +1,5 @@
-var ValorArabica = Number(1015 / 60).toFixed(4, 2); // valor de 1 Kg de Arábica
-var ValorConilon = Number(810 / 60).toFixed(4, 2); // valor de 1 Kg de Conilon
+var ValorArabica = Number(1015 / 60).toFixed(2); // valor de 1 Kg de Arábica
+var ValorConilon = Number(810 / 60).toFixed(2); // valor de 1 Kg de Conilon
 
 var Porcentagem = Number(0.2); // redução de perdas com nossos serviços
 
@@ -23,7 +23,6 @@ function calcular() {
         Total *= ValorConilon; // Aproveitamento sem nossos serviços
         TotalPerda *= ValorConilon; // Novo aproveitamento
     }
-
     div1.innerHTML = `Ao não utilizar nossos processos de controle, você tem lucro final de café tipo Arábico de R$${Total.toFixed(2).replace(".", ",")}<br><br>`;
     div1.innerHTML += `Seus lucros vão para R$${TotalPerda.toFixed(2).replace(".", ",")} ao utilizar nossos serviços na Kohi Quality`;
 
