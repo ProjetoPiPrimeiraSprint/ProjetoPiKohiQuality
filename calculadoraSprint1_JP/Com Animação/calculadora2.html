@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="style2.css">
+    <script type="text/javascript" src="script2.js"></script>
+</head>
+
+<body>
+    <div class="header" id="div_header">
+        <h1 class="H1">FAÇA UMA SIMULAÇÃO CONOSCO!</h1>
+        <div class="linha_header"></div>
+    </div>
+    <div class="Center">
+        <div id="div1" class="div1" style="display:none"></div>
+        <div class="container_input">
+            Sacas Produzidas por Ano: <input type="number" id="inProduzido" class="input">
+            Quilos Perdidos por Ano: <input type="number" id="inPerda" class="input">
+            <div class="select">
+                Tipo de café: <select class="option" id="opcoes">
+                    <option value="-1"><span class="select_null">SELECIONE</span></option>
+                    <option value="1" id="optionArabica">ARÁBICA</option>
+                    <option value="2" id="optionConilon">CONILON</option>
+                </select>
+            </div>
+            <div class="container_button">
+                <button onclick="calcular()" class="button">SIMULE!</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

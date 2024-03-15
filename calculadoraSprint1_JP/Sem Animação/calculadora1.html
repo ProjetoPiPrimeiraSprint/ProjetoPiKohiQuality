@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="style1.css">
+    <script type="text/javascript" src="script1.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="H1">FAÇA UMA SIMULAÇÃO CONOSCO!</h1>
+        <div class="linha"></div>
+    </div>
+    <div class="Center">
+        <div class="container_input">
+            Sacas Produzidas por Ano: <input type="number" id="inProduzido" class="input">
+            Quilos Perdidos por Ano: <input type="number" id="inPerda" class="input">
+            <div class="select">
+                Tipo de café: <select class="option" id="opcoes">
+                    <option value="-1"><span class="select_null">Selecione</span></option>
+                    <option value="1" id="optionArabica">Arábica</option>
+                    <option value="2" id="optionConilon">Conilon</option>
+                </select>
+            </div>
+            <div class="container_button">
+                <button onclick="calcular()" class="button">SIMULE!</button>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <div class="container_legenda">
+        <div class="container_informações">
+            <h1 class="H2">Informações de Mercado</h1>
+            <span class="paragrafo">Peso padrão por saca: 60Kg<br><br>Preço da saca Árabica: R$1.015,00<br><br>Preço da
+                saca Conilon: R$810,00<br><br>Valores atualizados em 14/03/23</span>
+        </div>
+        <div id="div1" class="div1"></div>
+        <div class="container_funcionamento">
+            <h1 class="H2">Como Funciona?</h1>
+            <span class="paragrafo">Com nossos serviços de controle de qualidade no processo de armazenamento, há uma
+                diminuição percentual de 80% da quantidade de quilos perdidos, totalizando um aumento de 25-30% de lucro
+                para sua empresa.</span>
+        </div>
+    </div>
+</body>
+
+</html>

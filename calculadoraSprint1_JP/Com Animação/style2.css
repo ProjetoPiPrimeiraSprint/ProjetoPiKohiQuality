@@ -1,0 +1,152 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #FFFCFA;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.H1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #556946;
+}
+
+.linha_header {
+    background-color: #556946;
+    margin-top: -0.57%;
+    width: 700px;
+    height: 2px;
+}
+
+.Center {
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+.container_input {
+    background-color: #FFFCFA;
+    color: #53452A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 450px;
+    height: 550px;
+}
+
+.input {
+    margin-top: -46px;
+    margin-bottom: -35px;
+    width: 400px;
+    background-color: #FFFCFA;
+    color: #53452A;
+    height: 36px;
+    border: solid #53452A;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.option {
+    margin-top: 20px;
+    text-align: center;
+    width: 409px;
+    border: solid #53452A;
+    background-color: transparent;
+    color: #53452A;
+    height: 40px;
+    border-width: 2.5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.container_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.button {
+    border: solid black 2px;
+    border-radius: 50px;
+    color: #53452A;
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    font-weight: bold;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+    /* transforma em meio segundo rapido no começo e no fim */
+}
+
+.button:hover {
+    /* hover = quando o mouse passa em cima */
+    transform: scale(1.1);
+    /* aumenta o botão em 10%*/
+    background-color: #556946;
+    /* muda a cor de fundo */
+    color: white;
+    /* muda a cor da letra */
+}
+
+.container_informações {
+    width: 400px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+}
+
+.H2 {
+    font-size: 20px;
+    color: #53452A;
+    margin-bottom: 20px;
+}
+
+.div1 {
+    margin-top: 145px;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    width: 450px;
+    color: #617750;
+    height: 250px;
+    font-weight: bold;
+    animation: moveToLeft 2s ease-in-out;
+    /* nomeia a animação moveToLeft, quanto tempo vai realizar */
+}
+
+@keyframes moveToLeft {
+    from {
+        margin-right: -64.5%;
+        /* define onde a animação COMEÇA */
+    }
+
+    to {
+        margin-right: 0%;
+        /* define onde a animação TERMINA */
+    }
+}
