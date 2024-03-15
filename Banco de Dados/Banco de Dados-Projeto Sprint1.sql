@@ -33,8 +33,14 @@ responsavel varchar(50));
 create table ProdutoeGraos(
 idGrão int primary key auto_increment,
 nome varchar(20),	
-temperatura varchar(20),
-umidade varchar(20));
+temperaturaIdeal varchar(20),
+umidadeIdeal varchar(20));
+
+create table ContatoSimulador(
+idContato int primary key auto_increment,
+nome varchar(40),
+email varchar(40),
+mensagem varchar(500));
 
 
 insert into Usuario(nome,endereco,CPF,email,senha,contato) values
@@ -65,12 +71,20 @@ insert into Armazem(modelo,capacidadeTonelada,localizacao,responsavel) values
 ('SAT 0406','74.20','Rua Nove de Julho, 453','Fabiana Santos'),
 ('SAT 0811','462','Rua Doce Caminho do Mar, 563','Clotilde Ferreira');
 
-insert into ProdutoeGraos(nome,temperatura,umidade) values
+insert into ProdutoeGraos(nome,temperaturaIdeal,umidadeIdeal) values
 ('Connilon','22°C ~ 26°C','16 ~ 18%'),
 ('Arábica','19°C ~ 21°C','11 ~ 13%');
 
+insert into ContatoSimulador(nome,email,mensagem) values
+('Henrique de Oliveira Perez','henriqueperez@hotmail.com','Olá, tudo bem? gostei da proposta de vocês, gostaria de nogociar!'),
+('Sheila Fagundes Neto','sheilafagundes@gmail.com','Oi, gostei dos valores informados poderiamos negociar?'),
+('Cleber Florentino','cleberflorentino@outlook.com','Tudo bem? gostei dos valores poderiam entrar em contato?'),
+('Anastacia Pereira da Silva','anastacia.pereira@gmail.com','Oi, gostaria de fazer um orçamento'),
+('Mauricio de Souza','mauriciodesouza@hotmail.com','Olá, gostaria de saber seus valores, poderia entrar em contato?');
+
 
 select * from Usuario;
+
 select * from Usuario where idUsuario=3;
 
 select * from SensorUmidade;
@@ -81,4 +95,10 @@ select * from SensorTemperatura where valor like '%19%';
 
 select * from Armazem;
 select * from Armazem where responsavel like '%José%';
+
+select * from ProdutoeGraos;
+select * from ProdutoeGraos where nome = 'Connilon';
+
+select * from ContatoSimulador;
+select * from ContatoSimulador where mensagem like '%contato%';
 
