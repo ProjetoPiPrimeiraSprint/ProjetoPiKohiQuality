@@ -104,6 +104,7 @@ body {
     display: flex;
     flex-direction: column;
     font-weight: bolder;
+    color:#556946;
 }
 
 .container_funcionamento {
@@ -112,6 +113,7 @@ body {
     font-weight: bolder;
     width: 300px;
     height: 280px;
+    color:#556946;
 }
 
 .H2 {
@@ -121,8 +123,9 @@ body {
 }
 
 .div1 {
-    margin-top: 145px;
+    margin-top: 350px;
     display: block;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     text-align: start;

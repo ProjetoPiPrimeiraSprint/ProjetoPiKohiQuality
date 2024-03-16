@@ -25,21 +25,9 @@ function calcular() {
         TotalPerda *= ValorConilon; // Novo aproveitamento
     }
     div1.innerHTML =
-    `<span class="H2">Simulando:</span>
-    Ao não utilizar nossos processos de controle, você tem lucro final de café tipo Arábico de R$${Total.toFixed(2).replace(".", ",")}
+    // `<span class="H2">Simulando:</span>
+    `Ao não utilizar nossos processos de controle, você tem lucro final de café tipo Arábico de R$${Total.toFixed(2).replace(".", ",")}
     <br><br>
-    Seus lucros vão para R$${TotalPerda.toFixed(2).replace(".", ",")} ao utilizar nossos serviços na Kohi Quality
-    <br><br><br>
-    <span class="H2">Como Funciona?</span>
-    Com nossos serviços de controle de qualidade no processo de armazenamento, há uma diminuição percentual de 80% da quantidade de quilos perdidos, totalizando um aumento de 25-30% de lucro para sua empresa.
-    <br><br><br>
-    <span class="H2">Informações de Mercado</span>
-    Peso padrão por saca: 60Kg
-    <br><br>
-    Preço da saca Árabica: R$1.015,00
-    <br><br>
-    Preço da saca Conilon: R$810,00
-    <br><br>
-    Valores atualizados em 14/03/23`;
+    Seus lucros vão para R$${TotalPerda.toFixed(2).replace(".", ",")} ao utilizar nossos serviços na Kohi Quality`;
 
 }
