@@ -40,5 +40,5 @@ function calcular() {
     <br><br>
     Preço da saca Conilon: R$810,00
     <br><br>
-    Valores atualizados em 14/03/23`;
+    Valores atualizados em 18/03/2024`;
 }
