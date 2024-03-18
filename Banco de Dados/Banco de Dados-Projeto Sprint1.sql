@@ -11,16 +11,10 @@ email varchar(40) unique,
 senha char(8),
 contato varchar(14) unique);
 
-create table SensorUmidade(
+create table Sensores(
 idSensor int primary key auto_increment,
 nome varchar(15),
-valor varchar(10),
-data_hora datetime default current_timestamp);
-
-create table SensorTemperatura(
-idSensor int primary key auto_increment,
-nome varchar(15),
-valor varchar(10),
+temperaturaUmidade varchar(20),
 data_hora datetime default current_timestamp);
 
 create table Armazem(
@@ -31,7 +25,7 @@ localizacao varchar(50),
 responsavel varchar(50));
 
 create table ProdutoeGraos(
-idGrão int primary key auto_increment,
+idGrao int primary key auto_increment,
 nome varchar(20),	
 temperaturaIdeal varchar(20),
 umidadeIdeal varchar(20));
@@ -50,19 +44,10 @@ insert into Usuario(nome,endereco,CPF,email,senha,contato) values
 ('Fabiana Santos','R. Nove de Julho, 453','43523478822','fabianasantos@gmail.com','8922','(21)3432-5541'),
 ('Clotilde Ferreira','R. Doce Caminho do Mar 563','34265888523','clotildeferreira@gmail.com','1212','(13)4454-3642');
 
-insert into SensorUmidade(nome,valor)values
-('EE160','35.8'),
-('EE072','27.53'),
-('EE212','26.68'),
-('EE260','25.20'),
-('EE23','27.36');
+insert into Sensores(nome,temperaturaUmidade)values
+('DHT11','11.8 , 17.5');
 
-insert into SensorTemperatura(nome,valor)values
-('EE074','19.5'),
-('EE431','17.6'),
-('EE441','18.9'),
-('EE471','14.8'),
-('EE889','16.4');
+
 
 insert into Armazem(modelo,capacidadeTonelada,localizacao,responsavel) values
 ('SAT 0405','64.20','Rua Inglaterra, 91','José Santana'),
@@ -84,21 +69,22 @@ insert into ContatoSimulador(nome,email,mensagem) values
 
 
 select * from Usuario;
-
+select idUsuario as 'ID Usuário', nome as 'Nome', endereco as 'Endereço', CPF, email as 'E-mail', senha as 'Senha', contato as Contato from Usuario;
 select * from Usuario where idUsuario=3;
 
-select * from SensorUmidade;
-select * from SensorUmidade where nome = 'EE23';
-
-select * from SensorTemperatura;
-select * from SensorTemperatura where valor like '%19%';
+select * from Sensores;
+select idSensor as 'ID Sensor', nome as 'Nome', temperaturaUmidade as 'Temperatura e Umidade', data_hora as 'Data e Hora' from Sensores;
+select * from Sensores where nome = 'DHT11';
 
 select * from Armazem;
+select idArmazem as 'ID Armazém', modelo as 'Modelo', capacidadeTonelada as 'Capacidade em Toneladas', localizacao as 'Localização', responsavel as 'Responsável' from Armazem;
 select * from Armazem where responsavel like '%José%';
 
 select * from ProdutoeGraos;
+select idGrao as 'ID Grão', nome as 'Nome', temperaturaIdeal as 'Temperatura Ideal',umidadeIdeal as 'Umidade Ideal' from ProdutoeGraos;
 select * from ProdutoeGraos where nome = 'Connilon';
 
 select * from ContatoSimulador;
+select idContato as 'ID Contato', nome as 'Nome', email as 'E-mail', mensagem as 'Mensagem' from ContatoSimulador;
 select * from ContatoSimulador where mensagem like '%contato%';
 
