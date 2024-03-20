@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador financeiro</title>
+</head>
+<body>
+    Insira a quantidade de lucro que você tem por saca de café: <input type="text" id="ipt_saca">
+
+    <button onclick="calcular()">Calcular quanto eu ganharia com a kohi Quality</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var lucro = Number(ipt_saca.value);
+        var NovoLucro = Number (lucro + (lucro * 0.3));
+
+    div_mensagem.innerHTML = ` O seu lucro atual por saca, é de R$${lucro}. <br>
+    Investindo na nossa solução, seu lucro será de até R$${NovoLucro} por saca! `
+    }
+</script>
