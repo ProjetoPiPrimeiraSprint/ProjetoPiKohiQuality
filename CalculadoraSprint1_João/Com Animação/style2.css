@@ -1,7 +1,10 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #E3E8EC;
+    background-image: url('assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -135,7 +138,7 @@ body {
     color: #617750;
     height: 250px;
     font-weight: bold;
-    animation: moveToLeft 2s ease-in-out;
+    animation: moveToLeft 1s ease-in-out;
     /* nomeia a animação moveToLeft, quanto tempo vai realizar */
 }
 
