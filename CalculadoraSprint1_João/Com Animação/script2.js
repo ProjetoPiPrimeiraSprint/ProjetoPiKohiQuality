@@ -1,5 +1,5 @@
 var ValorArabica = Number(1015 / 60).toFixed(2); // valor de 1 Kg de Arábica
-var ValorConilon = Number(810 / 60).toFixed(2); // valor de 1 Kg de Conilon
+var ValorConilon = Number(864 / 60).toFixed(2); // valor de 1 Kg de Conilon
 
 var Porcentagem = Number(0.2); // redução de perdas com nossos serviços
 
@@ -37,7 +37,7 @@ function calcular() {
     <br><br>
     Preço da saca Árabica: R$1.015,00
     <br><br>
-    Preço da saca Conilon: R$810,00
+    Preço da saca Conilon: R$864,00
     <br><br>
-    Valores atualizados em 18/03/2024`;
+    Valores atualizados em 20/03/2024`;
 }
