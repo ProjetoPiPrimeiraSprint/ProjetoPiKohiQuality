@@ -74,7 +74,7 @@ insert into RegistroSensor (idSensor,temperatura,umidade) values
 (4,'16.9','13.7'),
 (5,'17.1','15.8');
 
-select idRegistroSensor as 'ID Registro do Sensor',idSensor as 'ID Sensor',temperatura as 'Temperatura',umidade as 'Umidade' from RegistroSensor;
+select idRegistroSensor as 'ID Registro do Sensor',idSensor as 'ID Sensor',temperatura as 'Temperatura',umidade as 'Umidade', data_hora as 'Data e Hora' from RegistroSensor;
 
 
 -- TABELA ARMAZEM (PARA GURDAR INFORMAÇÕES SOBRE O SILO, COMO SUA CAPACIDADE)
