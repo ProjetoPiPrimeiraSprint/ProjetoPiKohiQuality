@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade em quilos perdido: <input type="text" id="inp_Kperdido"> <br>
+    insira a porcentagem do quanto é perdido:: <input type="text" id="inp_pctperdida"> <br>
+    <button onclick="calcular()">Calcule</button> <br>
+
+    <div id="divMsg"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        var Kperdido = inp_Kperdido.value
+        var porcentagem = inp_pctperdida.value
+        var resultFinal = 0
+
+        if (porcentagem <= 30) {
+            resultFinal = Kperdido * 0.6
+        } 
+        if (porcentagem >= 31) {
+            resultFinal = Kperdido * 0.4
+        }    
+
+        divMsg.innerHTML = `antes você perdia ${Kperdido} e com a nossa empresa perdera apenas ${resultFinal}`
+    }
+
+</script>
