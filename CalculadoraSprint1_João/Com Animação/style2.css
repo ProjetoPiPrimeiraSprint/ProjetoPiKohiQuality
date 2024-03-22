@@ -153,3 +153,13 @@ body {
         /* define onde a animação TERMINA */
     }
 }
+
+.update {
+    margin-top: 10px;
+    font-size: 17px;
+    color: #53452A;
+}
+
+.update:hover {
+    text-decoration: underline;
+}
