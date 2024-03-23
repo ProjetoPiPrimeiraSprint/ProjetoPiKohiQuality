@@ -12,13 +12,15 @@ void setup() {         // só acontece uma vez no código
 void loop() {
 
   // cria variaveis de valor decimal (float) que armazena os dados captados pelo sensor
-  float umidade = dht_1.readHumidity();
-  int umidadeMax = 15.5;  // %
-  int umidadeMin = 13.5;  // %
+  float umidade = dht_1.readHumidity();  // Conilon
+  int umidadeMax = 18;                   // %
+  int umidadeMin = 16;                   // %
+  float umidadeIdeal = umidade - 48;
 
-  float temperatura = dht_1.readTemperature();
-  int temperaturaMax = 23.5;  // C°
-  int temperaturaMin = 20.5;  // C°
+  float temperatura = dht_1.readTemperature();  // Conilon
+  int temperaturaMax = 26;                      // C°
+  int temperaturaMin = 22;                      // C°
+  float temperaturaIdeal = temperatura - 5.5;
 
   ///////////////////////////////////////////////////////////////
 
@@ -30,20 +32,26 @@ void loop() {
     Serial.print("Umidade:");
     Serial.print(umidade);
     Serial.print(", ");
-    Serial.print("UMáxima:");
+    Serial.print("U_Máxima:");
     Serial.print(umidadeMax);
     Serial.print(", ");
-    Serial.print("UMínima:");
+    Serial.print("U_Mínima:");
     Serial.print(umidadeMin);
+    Serial.print(", ");
+    Serial.print("U_Fictícia:");
+    Serial.print(umidadeIdeal);
     Serial.print(", ");
     Serial.print("Temperatura:");
     Serial.print(temperatura);
     Serial.print(", ");
-    Serial.print("TMáxima:");
+    Serial.print("T_Máxima:");
     Serial.print(temperaturaMax);
     Serial.print(", ");
-    Serial.print("TMínima:");
-    Serial.println(temperaturaMin);
+    Serial.print("T_Mínima:");
+    Serial.print(temperaturaMin);
+    Serial.print(", ");
+    Serial.print("T_Fictícia:");
+    Serial.println(temperaturaIdeal);
   }
   delay(1000);  // faz uma leitura a cada 1 segundo
 }
