@@ -1,0 +1,31 @@
+<HTMl><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Simule o Lucro que você teria com a <U>Kohi Quality</U> <br><br>
+    Iforme a quantidade de sacas produzidas <br>
+    <input id="input_quantidadeproduzida" type="number"><br>
+    Informe a quantidade perdida por quilo <br>
+    <input type="number" id="input_quantidadeperdida"> <br>
+    <button onclick="calculo()">Simular</button>
+</body>
+<script>
+    function calculo(){
+        var producao = Number(input_quantidadeproduzida);
+        var perda = Number(input_quantidadeperdida);
+        var pocentagem = perda / producao;
+        var lucro = 0;
+
+        if (porcentagem <= 0.03){
+            lucro = perda * 0.6
+        } else if (porcentagem >= 0.031){
+            lucro = perda * 0.4
+        }
+
+    }
+</script>
+</html></HTMl>
